@@ -1,68 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YogaxD Client Browser</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            text-align: center;
-        }
-        input[type="text"] {
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            padding: 10px 20px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>YogaxD Client Browser</h2>
-        <form action="#" method="get" id="form">
-            <label for="url">Masukkan link</label><br>
-            <input type="text" id="url" name="url" placeholder="Contoh: google.com"><br>
-            <input type="submit" value="Go">
-        </form>
-    </div>
+<!doctype html>
+<title>Site Maintenance</title>
+<style>
+  body { text-align: center; padding: 150px; }
+  h1 { font-size: 50px; }
+  body { font: 20px Helvetica, sans-serif; color: #333; }
+  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+  a { color: #dc8100; text-decoration: none; }
+  a:hover { color: #333; text-decoration: none; }
+</style>
 
-    <script>
-        document.getElementById("form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var input = document.getElementById("url").value.trim();
-            var url;
-            if (!input.includes(".") && !input.startsWith("http://") && !input.startsWith("https://")) {
-                url = "https://www.google.com/search?q=" + encodeURIComponent(input);
-            } else if (!input.startsWith("http://") && !input.startsWith("https://")) {
-                url = "https://" + input;
-            } else {
-                url = input;
-            }
-            window.location.href = url;
-        });
-    </script>
-</body>
-</html>
+<article>
+    <h1>We&rsquo;ll be back soon!</h1>
+    <div>
+        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>&mdash; YogaxD Client Browser</p>
+    </div>
+</article>
