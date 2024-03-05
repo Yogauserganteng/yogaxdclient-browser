@@ -30,7 +30,8 @@
             color: #666;
             margin-bottom: 20px;
         }
-        input[type="text"] {
+        input[type="text"],
+        input[type="password"] {
             padding: 12px;
             margin-bottom: 20px;
             width: calc(100% - 24px);
@@ -40,7 +41,8 @@
             font-size: 16px;
             transition: border-color 0.3s ease;
         }
-        input[type="text"]:focus {
+        input[type="text"]:focus,
+        input[type="password"]:focus {
             outline: none;
             border-color: #5b9dd9;
         }
@@ -60,7 +62,17 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="login-container">
+        <h2>Login Ke NexaSurf Browser</h2>
+        <p>Silahkan Login Untuk Mengakses NexaSurf Browser.</p>
+        <form action="#" method="post" id="login-form">
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <div class="container" id="browser-container" style="display: none;">
         <h2>NexaSurf Browser</h2>
         <p>Pergantian Nama YogaxD Client Ke NexaSurf Browser</p>
         <form action="#" method="get" id="form">
@@ -70,27 +82,31 @@
     </div>
 
     <script>
-        var customLinks = {
-            "pw": "https://htmlpreview.github.io/?https://github.com/Yogauserganteng/yogaxdclient-browser/blob/main/pw.html",
-        };
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            // Here you can add your login logic, for example, check if the username and password match some predefined values
+            // For simplicity, I'm using a hardcoded username and password for demonstration purposes
+            if (username === "yogaxd" && password === "123") {
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("browser-container").style.display = "block";
+            } else {
+                alert("username atau password salah silahkan coba lagi, silahkan hubungi operator untuk akses login.");
+            }
+        });
 
         document.getElementById("form").addEventListener("submit", function(event) {
             event.preventDefault();
             var input = document.getElementById("url").value.trim();
             var url;
-
-            if (customLinks.hasOwnProperty(input.toLowerCase())) {
-                url = customLinks[input.toLowerCase()];
+            if (!input.includes(".") && !input.startsWith("http://") && !input.startsWith("https://")) {
+                url = "https://www.google.com/search?q=" + encodeURIComponent(input);
+            } else if (!input.startsWith("http://") && !input.startsWith("https://")) {
+                url = "https://" + input;
             } else {
-                if (!input.includes(".") && !input.startsWith("http://") && !input.startsWith("https://")) {
-                    url = "https://www.google.com/search?q=" + encodeURIComponent(input);
-                } else if (!input.startsWith("http://") && !input.startsWith("https://")) {
-                    url = "https://" + input;
-                } else {
-                    url = input;
-                }
+                url = input;
             }
-
             window.location.href = url;
         });
     </script>
