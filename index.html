@@ -25,13 +25,15 @@
         }
         h2 {
             color: #333;
+            margin-bottom: 20px;
         }
         p {
             color: #666;
             margin-bottom: 20px;
         }
         input[type="text"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="submit"] {
             padding: 12px;
             margin-bottom: 20px;
             width: calc(100% - 24px);
@@ -39,7 +41,7 @@
             border-radius: 5px;
             box-sizing: border-box;
             font-size: 16px;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
         input[type="text"]:focus,
         input[type="password"]:focus {
@@ -47,14 +49,12 @@
             border-color: #5b9dd9;
         }
         input[type="submit"] {
-            padding: 12px 24px;
             border: none;
             background-color: #007bff;
             color: white;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s ease;
         }
         input[type="submit"]:hover {
             background-color: #0056b3;
@@ -65,12 +65,16 @@
     <div class="container" id="login-container">
         <h2>Login Ke NexaSurf Browser</h2>
         <p>Silahkan Login Untuk Mengakses NexaSurf Browser.</p>
-        <h2>503 Services Unavailable</h2>
+        <form action="#" method="post" id="login-form">
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+            <input type="password" id="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Login">
+        </form>
     </div>
 
     <div class="container" id="browser-container" style="display: none;">
         <h2>NexaSurf Browser</h2>
-        <p>Pergantian Nama YogaxD Client Ke NexaSurf Browser</p>
+        <p>Powered By YogaxD Client Browser</p>
         <form action="#" method="get" id="form">
             <input type="text" id="url" name="url" placeholder="Contoh: google.com"><br>
             <input type="submit" value="Go">
@@ -82,11 +86,11 @@
             event.preventDefault();
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-            if (username === "yogaxd" && password === "cli123") {
+            if (username === "yogaxd" && password === "123") {
                 document.getElementById("login-container").style.display = "none";
                 document.getElementById("browser-container").style.display = "block";
             } else {
-                alert("username atau password salah silahkan coba lagi, silahkan hubungi operator untuk akses login.");
+                alert("Username atau password salah. Silahkan coba lagi atau hubungi operator untuk bantuan.");
             }
         });
 
