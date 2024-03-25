@@ -1,73 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0070)file:///C:/Users/Yoga%20Rizki%20Pratama/Desktop/Project%205/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexaSurf Browser</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #957D95;
         }
+      
         .container {
-            text-align: center;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            width: 350px;
+          text-align: center;
+          background-color: #fff;
+          border-radius: 10px;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          width: 350px;
+          padding: 2rem;
         }
+      
         h2 {
-            color: #333;
-            margin-bottom: 20px;
+          color: #333;
+          margin-bottom: 1.5rem;
+          font-size: 1.5rem;
         }
+      
         p {
-            color: #666;
-            margin-bottom: 20px;
+          color: #666;
+          margin-bottom: 2rem;
+          font-size: 0.9rem;
         }
+      
         input[type="text"],
         input[type="password"],
         input[type="submit"] {
-            padding: 12px;
-            margin-bottom: 20px;
-            width: calc(100% - 24px);
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-            transition: all 0.3s ease;
+          padding: 0.75rem;
+          margin-bottom: 1.5rem;
+          width: 100%;
+          border: 1px solid #E49AB0;
+          border-radius: 5px;
+          box-sizing: border-box;
+          font-size: 1rem;
+          transition: all 0.3s ease;
         }
+      
         input[type="text"]:focus,
         input[type="password"]:focus {
-            outline: none;
-            border-color: #5b9dd9;
+          outline: none;
+          border-color: #E49AB0;
         }
+      
         input[type="submit"] {
-            border: none;
-            background-color: #007bff;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+          border: none;
+          background-color: #ECB8A5;
+          color: rgb(0, 0, 0);
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1rem;
         }
+      
         input[type="submit"]:hover {
-            background-color: #0056b3;
+          background-color: #ECCFC3;
         }
-    </style>
+      
+        form {
+          display: flex;
+          flex-direction: column;
+        }
+      </style>
 </head>
 <body>
     <div class="container" id="login-container">
         <h2>Login Ke NexaSurf Browser</h2>
         <p>Silahkan Login Untuk Mengakses NexaSurf Browser.</p>
-        <form action="#" method="post" id="login-form">
-            <input type="text" id="username" name="username" placeholder="Username"><br>
-            <input type="password" id="password" name="password" placeholder="Password"><br>
+        <form action="file:///C:/Users/Yoga%20Rizki%20Pratama/Desktop/Project%205/index.html#" method="post" id="login-form">
+            <input type="text" id="username" name="username" placeholder="Keys"><br>
             <input type="submit" value="Login">
         </form>
     </div>
@@ -75,7 +88,7 @@
     <div class="container" id="browser-container" style="display: none;">
         <h2>NexaSurf Browser</h2>
         <p>Powered By YogaxD Client Browser</p>
-        <form action="#" method="get" id="form">
+        <form action="file:///C:/Users/Yoga%20Rizki%20Pratama/Desktop/Project%205/index.html#" method="get" id="form">
             <input type="text" id="url" name="url" placeholder="Contoh: google.com"><br>
             <input type="submit" value="Go">
         </form>
@@ -85,8 +98,7 @@
         document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault();
             var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-            if (username === "yogaxd" && password === "123") {
+            if (username === "yogaxd") {
                 document.getElementById("login-container").style.display = "none";
                 document.getElementById("browser-container").style.display = "block";
             } else {
@@ -108,5 +120,5 @@
             window.location.href = url;
         });
     </script>
-</body>
-</html>
+
+</body></html>
